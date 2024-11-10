@@ -4,18 +4,21 @@ body {
     color: #ffffff;
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0; /* Removido o padding inicial */
 }
 
+/* Estilo do header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px;
 }
 
 h1 {
     color: #ff4c4c;
     margin: 0;
+    text-align: center; /* Centraliza o título */
 }
 
 nav ul {
@@ -34,15 +37,23 @@ nav a {
     font-weight: bold;
 }
 
-/* Estilos da seção de introdução e recomendação */
-.intro, .recommendation {
-    margin-top: 40px;
+/* Estilos da seção de introdução */
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px); /* Centraliza verticalmente considerando o header */
+    padding: 20px;
 }
 
-label {
-    font-size: 18px;
+.center-content {
+    max-width: 800px;
+    text-align: center;
+    font-size: 1.5rem; /* Aumenta a visibilidade do texto */
+    font-weight: bold;
 }
 
+/* Botões e inputs */
 button, input[type="submit"] {
     background-color: #ff4c4c;
     color: white;
@@ -58,17 +69,17 @@ button:hover, input[type="submit"]:hover {
     background-color: #e04343;
 }
 
-/* Ajustes para a seção com fundo laranja */
+/* Seção laranja */
 .orange-section {
-    background-color: orange; /* Cor de fundo laranja */
-    padding: 10px 20px; /* Reduz o padding */
-    text-align: center;  /* Centraliza o conteúdo */
-    margin-top: 40px; /* Espaço entre a introdução e a seção laranja */
-    border-radius: 8px; /* Bordas arredondadas, se necessário */
+    background-color: orange;
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 8px;
 }
 
 .orange-section h2 {
-    color: #ffffff; /* Cor do título dentro da seção laranja */
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
@@ -87,5 +98,6 @@ button:hover, input[type="submit"]:hover {
     background-color: orange;
     color: white;
 }
+
 
 
