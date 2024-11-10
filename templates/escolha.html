@@ -10,9 +10,10 @@
         <h1>ANTES DO FRAME</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="escolha.html">Escolha do Filme</a></li>
-                <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+                    <li><a href="{{ url_for('escolha_filme') }}">Escolha do Filme</a></li>
+                </ul>                
             </ul>
         </nav>
     </header>
