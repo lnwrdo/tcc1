@@ -28,7 +28,7 @@ nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
-    margin-left: 60px; /* Move a navegação mais para a esquerda */
+    margin-left: 100px; /* Move a navegação mais para a esquerda */
 }
 
 nav li {
