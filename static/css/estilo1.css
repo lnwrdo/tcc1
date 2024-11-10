@@ -19,8 +19,8 @@ header {
 h1 {
     color: #ff4c4c;
     margin: 0;
-    font-size: 2rem; /* Aumenta o tamanho do título */
-    padding-left: 20px; /* Move o título para a direita */
+    font-size: 5rem; /* Aumenta o tamanho do título */
+    padding-left: 50px; /* Move o título para a direita */
 }
 
 /* Navegação */
