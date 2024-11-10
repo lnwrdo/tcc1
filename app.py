@@ -18,8 +18,8 @@ def index():
 
 @app.route('/escolha')
 def escolha_filme():
-    # Renderiza a página de escolha de filme
-    return render_template('escolha.html')
+    genres = df['Genre'].unique()  # Obtenha os gêneros únicos
+    return render_template('escolha.html', genres=genres)
 
 @app.route('/recommend', methods=['POST'])
 def recommend():
@@ -42,5 +42,6 @@ def recommend():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
     
