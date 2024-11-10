@@ -29,7 +29,7 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    transform: translateX(-100px); /* Ajuste este valor para mover os itens para a esquerda */
+    transform: translateX(-150px); /* Ajuste este valor para mover os itens para a esquerda */
 }
 
 nav li {
