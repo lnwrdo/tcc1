@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
+    <meta charset="UTF-8">
+    <title>Escolha do Filme</title>
+</head>
+<body>
+    <header>
+        <h1>ANTES DO FRAME</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="escolha.html">Escolha do Filme</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="recommendation">
+        <h2>RECOMENDADOR DE FILMES:</h2>
+        <form action="/recommend" method="post">
+            <label for="genre">Selecione o Gênero:</label>
+            <select name="genre" id="genre">
+                {% for genre in genres %}
+                    <option value="{{ genre }}">{{ genre }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="GERAR FILMES">
+        </form>
+    </section>
+</body>
+</html>

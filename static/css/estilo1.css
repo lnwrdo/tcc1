@@ -1,32 +1,44 @@
 body {
-    background-color: #1b1b1b; /* Cor de fundo escura */
-    color: #ffffff; /* Cor do texto */
+    background-color: #1b1b1b;
+    color: #ffffff;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 20px;
 }
 
-nav ul {
+header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    color: #ff4c4c;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
     list-style-type: none;
     padding: 0;
 }
 
 nav li {
-    display: inline;
+    margin: 0 15px;
 }
 
 nav a {
-    color: #ff4c4c; /* Cor vermelha */
+    color: #ff4c4c;
     text-decoration: none;
     font-weight: bold;
-    padding: 10px;
 }
 
-.intro h1, .recommendation h2 {
-    color: #ff4c4c; /* Títulos em vermelho */
-    text-transform: uppercase;
+.intro, .recommendation {
+    margin-top: 40px;
+}
+
+label {
+    font-size: 18px;
 }
 
 button, input[type="submit"] {
@@ -41,18 +53,5 @@ button, input[type="submit"] {
 }
 
 button:hover, input[type="submit"]:hover {
-    background-color: #e04343; /* Efeito hover */
-}
-
-.intro, .recommendation {
-    margin-bottom: 40px;
-}
-
-label {
-    font-size: 18px;
-}
-
-select {
-    margin-left: 10px;
-    padding: 5px;
+    background-color: #e04343;
 }
