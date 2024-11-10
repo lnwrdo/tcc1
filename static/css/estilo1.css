@@ -1,3 +1,4 @@
+/* Estilos globais */
 body {
     background-color: #1b1b1b;
     color: #ffffff;
@@ -33,6 +34,7 @@ nav a {
     font-weight: bold;
 }
 
+/* Estilos da seção de introdução e recomendação */
 .intro, .recommendation {
     margin-top: 40px;
 }
@@ -55,3 +57,33 @@ button, input[type="submit"] {
 button:hover, input[type="submit"]:hover {
     background-color: #e04343;
 }
+
+/* Estilos para a seção com fundo laranja e botão */
+.orange-section {
+    background-color: orange; /* Cor de fundo laranja */
+    padding: 20px;
+    text-align: center;  /* Centraliza o conteúdo */
+    margin-top: 20px;
+}
+
+.orange-section h2 {
+    color: #ffffff; /* Cor do título dentro da seção laranja */
+    margin-bottom: 15px;
+}
+
+.orange-section .button {
+    background-color: white;
+    color: orange;
+    border: 2px solid orange;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.orange-section .button:hover {
+    background-color: orange;
+    color: white;
+}
+
