@@ -16,6 +16,11 @@ def index():
     genres = df['Genre'].unique()  # Obtenha os gêneros únicos
     return render_template('index.html', genres=genres)
 
+@app.route('/escolha')
+def escolha_filme():
+    # Renderiza a página de escolha de filme
+    return render_template('escolha.html')
+
 @app.route('/recommend', methods=['POST'])
 def recommend():
     selected_genre = request.form['genre']
