@@ -58,17 +58,18 @@ button:hover, input[type="submit"]:hover {
     background-color: #e04343;
 }
 
-/* Estilos para a seção com fundo laranja e botão */
+/* Ajustes para a seção com fundo laranja */
 .orange-section {
     background-color: orange; /* Cor de fundo laranja */
-    padding: 20px;
+    padding: 10px 20px; /* Reduz o padding */
     text-align: center;  /* Centraliza o conteúdo */
-    margin-top: 20px;
+    margin-top: 40px; /* Espaço entre a introdução e a seção laranja */
+    border-radius: 8px; /* Bordas arredondadas, se necessário */
 }
 
 .orange-section h2 {
     color: #ffffff; /* Cor do título dentro da seção laranja */
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .orange-section .button {
@@ -86,4 +87,5 @@ button:hover, input[type="submit"]:hover {
     background-color: orange;
     color: white;
 }
+
 
