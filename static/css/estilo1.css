@@ -24,16 +24,12 @@ h1 {
 }
 
 /* Navegação */
-nav {
-    position: relative;
-    left: -40px; /* Ajuste este valor para mover a navegação para a esquerda */
-}
-
 nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
     margin: 0;
+    transform: translateX(-40px); /* Ajuste este valor para mover os itens para a esquerda */
 }
 
 nav li {
@@ -45,6 +41,7 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 }
+
 
 
 
