@@ -24,11 +24,16 @@ h1 {
 }
 
 /* Navegação */
+nav {
+    position: relative;
+    left: -40px; /* Ajuste este valor para mover a navegação para a esquerda */
+}
+
 nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
-    margin-left: 40px; /* Ajuste este valor conforme necessário para movê-los levemente para o centro */
+    margin: 0;
 }
 
 nav li {
@@ -40,6 +45,7 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 }
+
 
 
 /* Estilo da seção de introdução */
