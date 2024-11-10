@@ -15,9 +15,12 @@ header {
     padding: 20px;
 }
 
+/* Ajuste do título para a direita e aumento do tamanho */
 h1 {
     color: #ff4c4c;
     margin: 0;
+    font-size: 2rem; /* Aumenta o tamanho do título */
+    padding-left: 20px; /* Move o título para a direita */
 }
 
 /* Navegação */
@@ -25,6 +28,7 @@ nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
+    margin-right: auto; /* Move a navegação para a esquerda */
 }
 
 nav li {
@@ -50,7 +54,10 @@ nav a {
     font-weight: bold;
     line-height: 1.6;
     margin: 0; /* Remove margens extras */
+    max-width: 60%; /* Limita a largura do texto para concentrá-lo */
+    margin: auto; /* Centraliza horizontalmente */
 }
+
 
 
 
