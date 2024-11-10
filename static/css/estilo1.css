@@ -28,7 +28,7 @@ nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
-    margin-left: 100px; /* Move a navegação mais para a esquerda */
+    margin-left: 60px; /* Reduza o valor para movê-los levemente para a esquerda */
 }
 
 nav li {
@@ -40,6 +40,7 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 }
+
 
 /* Estilo da seção de introdução */
 .intro {
