@@ -10,18 +10,17 @@ body {
 /* Estilo do header */
 header {
     display: flex;
-    justify-content: flex-start; /* Alinha o conteúdo no início */
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
 }
 
-/* Ajuste do título para a direita */
+/* Ajuste do título para a direita e aumento do tamanho */
 h1 {
     color: #ff4c4c;
     margin: 0;
     font-size: 3rem; /* Aumenta o tamanho do título */
     padding-left: 60px; /* Move o título para a direita */
-    margin-right: 20px; /* Adiciona espaço entre o título e a navegação */
 }
 
 /* Navegação */
@@ -29,7 +28,7 @@ nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
-    margin: 0; /* Remove o margin-left para alinhar à esquerda */
+    margin-left: 100px; /* Move a navegação mais para a esquerda */
 }
 
 nav li {
@@ -40,6 +39,23 @@ nav a {
     color: #ff4c4c;
     text-decoration: none;
     font-weight: bold;
+}
+
+/* Estilo da seção de introdução */
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(100vh - 120px); /* Centraliza verticalmente considerando o header */
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte */
+    font-weight: bold;
+    line-height: 1.6;
+    margin: 0; /* Remove margens extras */
+    max-width: 60%; /* Limita a largura do texto para concentrá-lo */
+    margin: auto; /* Centraliza horizontalmente */
 }
 
 
