@@ -1,6 +1,6 @@
 /* Estilos globais */
 body {
-    background-color: #1b1b1b;
+    background-color: #131C21;
     color: #ffffff;
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -19,8 +19,8 @@ header {
 h1 {
     color: #ff4c4c;
     margin: 0;
-    font-size: 5rem; /* Aumenta o tamanho do título */
-    padding-left: 50px; /* Move o título para a direita */
+    font-size: 3rem; /* Aumenta o tamanho do título */
+    padding-left: 60px; /* Move o título para a direita */
 }
 
 /* Navegação */
