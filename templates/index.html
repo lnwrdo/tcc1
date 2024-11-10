@@ -3,18 +3,32 @@
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
     <meta charset="UTF-8">
-    <title>Recomendação de Filmessss</title>
+    <title>Recomendação de Filmes</title>
 </head>
 <body>
-    <h1>Recomendador de Filmesssssss</h1>
-    <form action="/recommend" method="post">
-        <label for="genre">Selecione o Gênero:</label>
-        <select name="genre" id="genre">
-            {% for genre in genres %}
-                <option value="{{ genre }}">{{ genre }}</option>
-            {% endfor %}
-        </select>
-        <input type="submit" value="Recomendar Filmes">
-    </form>
+    <nav>
+        <ul>
+            <li><a href="#">Página Inicial</a></li>
+            <li><a href="#">Escolha do Filme</a></li>
+        </ul>
+    </nav>
+    <section class="intro">
+        <h1>PÁGINA INICIAL</h1>
+        <p>Nosso objetivo é tornar a busca pelo filme perfeito simples e rápida. Cada recomendação é cuidadosamente selecionada com base em algoritmos inteligentes. Acreditamos que filmes têm o poder de conectar pessoas, abrir horizontes e transformar momentos.</p>
+        <p>Bem-vindo ao nosso site! Esperamos que sua jornada por aqui seja tão empolgante quanto a nossa tem sido em desenvolvê-lo. E, claro, que você encontre o próximo filme que vai te marcar para sempre.</p>
+        <button>ESCOLHA DO FILME</button>
+    </section>
+    <section class="recommendation">
+        <h2>RECOMENDADOR DE FILMES:</h2>
+        <form action="/recommend" method="post">
+            <label for="genre">Selecione o Gênero:</label>
+            <select name="genre" id="genre">
+                {% for genre in genres %}
+                    <option value="{{ genre }}">{{ genre }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="GERAR FILMES">
+        </form>
+    </section>
 </body>
 </html>
