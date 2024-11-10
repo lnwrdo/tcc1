@@ -4,17 +4,11 @@ body {
     color: #ffffff;
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0; /* Removido o padding inicial */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Centraliza o conteúdo verticalmente */
+    padding: 0;
 }
 
 /* Estilo do header */
 header {
-    width: 100%; /* Ajusta a largura do header */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,20 +18,9 @@ header {
 h1 {
     color: #ff4c4c;
     margin: 0;
-    text-align: center;
 }
 
-/* Estilo da seção de introdução */
-.intro {
-    text-align: center;
-    max-width: 800px;
-    font-size: 1.5rem; /* Aumenta o tamanho da fonte */
-    font-weight: bold; /* Negrito */
-    line-height: 1.6; /* Melhor espaçamento entre linhas */
-    margin: 20px 0; /* Espaçamento ao redor da seção */
-}
-
-/* Ajustes de navegação */
+/* Navegação */
 nav ul {
     display: flex;
     list-style-type: none;
@@ -53,6 +36,22 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 }
+
+/* Estilo da seção de introdução */
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(100vh - 120px); /* Centraliza verticalmente considerando o header */
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte */
+    font-weight: bold;
+    line-height: 1.6;
+    margin: 0; /* Remove margens extras */
+}
+
 
 
 
