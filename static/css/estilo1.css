@@ -44,12 +44,12 @@ nav a {
 
 /* Estilo da seção de introdução */
 .intro {
-    margin-top: -500px; /* Ajuste este valor conforme necessário para mover o texto mais para cima */
+    position: relative; /* Permite ajustar a posição */
+    top: -100px; /* Move o texto para cima */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: calc(100vh - 120px); /* Centraliza verticalmente considerando o header */
     text-align: center;
     padding: 20px;
     font-size: 1.5rem; /* Aumenta o tamanho da fonte */
@@ -58,7 +58,3 @@ nav a {
     margin: auto; /* Centraliza horizontalmente */
     max-width: 60%; /* Limita a largura do texto para concentrá-lo */
 }
-
-
-
-
