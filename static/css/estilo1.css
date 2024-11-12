@@ -45,7 +45,7 @@ nav a {
 /* Estilo da seção de introdução */
 .intro {
     position: relative; /* Permite ajustar a posição */
-    top: -60px; /* Move o texto para cima */
+    top: -30px; /* Move o texto para cima */
     display: flex;
     justify-content: center;
     align-items: center;
