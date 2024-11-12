@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adicione a meta tag para responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta tag para responsividade -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
     <title>Página Inicial</title>
 </head>
@@ -11,10 +11,10 @@
         <h1>ANTES DO FRAME</h1>
         <nav>
             <ul>
-                <!-- Certifique-se de que as rotas 'index' e 'escolha_filme' estejam definidas corretamente no seu app Flask -->
+                <!-- Links de navegação -->
                 <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
                 <li><a href="{{ url_for('escolha_filme') }}">Escolha do Filme</a></li>
-            </ul>           
+            </ul>
         </nav>
     </header>
 
@@ -42,5 +42,11 @@
             });
         });
     </script>
+
+    <!-- Rodapé opcional -->
+    <footer>
+        <p>&copy; 2024 Antes do Frame. Todos os direitos reservados.</p>
+        <p>Desenvolvido por alunos da UNISAGRADO: Leonardo, Rafael e Rodolfo.</p>
+    </footer>
 </body>
 </html>
