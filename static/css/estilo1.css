@@ -24,7 +24,7 @@ header {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Animação de brilho no título */
+/* Animação de brilho mais suave no título */
 h1 {
     color: #ff4c4c;
     margin: 0;
@@ -37,10 +37,10 @@ h1 {
 
 @keyframes glow {
     0% {
-        text-shadow: 0 0 10px #ff4c4c, 0 0 20px #ff4c4c, 0 0 30px #ff4c4c, 0 0 40px #ff4c4c;
+        text-shadow: 0 0 5px #ff4c4c, 0 0 10px #ff4c4c, 0 0 15px #ff4c4c, 0 0 20px #ff4c4c;
     }
     100% {
-        text-shadow: 0 0 20px #ff7878, 0 0 30px #ff7878, 0 0 40px #ff7878, 0 0 50px #ff7878;
+        text-shadow: 0 0 8px #ff7878, 0 0 12px #ff7878, 0 0 16px #ff7878, 0 0 24px #ff7878;
     }
 }
 
