@@ -44,18 +44,21 @@ nav a {
 
 /* Estilo da seção de introdução */
 .intro {
-    padding-top: 400px; /* Ajuste este valor para mover a seção mais para baixo */
-    margin-top: 20px; /* Ajuste adicional para mais controle de posição */
+    padding-top: 200px; /* Ajuste para posicionar a seção mais para baixo */
+    margin-top: 40px; /* Ajuste adicional para mais controle de posição */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 20px;
-    font-size: 1.5rem; /* Aumenta o tamanho da fonte */
+    padding: 40px; /* Aumenta o espaço ao redor do texto */
+    font-size: 1.5rem; /* Tamanho da fonte */
     font-weight: bold;
-    line-height: 1.6;
+    line-height: 1.8; /* Aumenta o espaçamento entre linhas */
     margin: auto; /* Centraliza horizontalmente */
     max-width: 60%; /* Limita a largura do texto para concentrá-lo */
+    color: #f2f2f2; /* Deixa o texto levemente mais claro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Adiciona sombra ao texto */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo levemente transparente para destaque */
+    border-radius: 8px; /* Arredonda os cantos */
 }
-
