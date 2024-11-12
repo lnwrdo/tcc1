@@ -44,7 +44,7 @@ nav a {
 
 /* Estilo da seção de introdução */
 .intro {
-    margin-top: -200px; /* Ajuste este valor conforme necessário para mover o texto mais para cima */
+    margin-top: -500px; /* Ajuste este valor conforme necessário para mover o texto mais para cima */
     display: flex;
     justify-content: center;
     align-items: center;
