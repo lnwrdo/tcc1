@@ -37,16 +37,14 @@ nav li {
 }
 
 nav a {
-    color: #ff4c4c;
+    color: #ec1313;
     text-decoration: none;
     font-weight: bold;
 }
 
-
-
-
 /* Estilo da seção de introdução */
 .intro {
+    margin-top: -50px; /* Ajuste este valor conforme necessário para mover o texto mais para cima */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,11 +55,9 @@ nav a {
     font-size: 1.5rem; /* Aumenta o tamanho da fonte */
     font-weight: bold;
     line-height: 1.6;
-    margin: 0; /* Remove margens extras */
-    max-width: 60%; /* Limita a largura do texto para concentrá-lo */
     margin: auto; /* Centraliza horizontalmente */
+    max-width: 60%; /* Limita a largura do texto para concentrá-lo */
 }
-
 
 
 
