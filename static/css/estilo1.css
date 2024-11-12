@@ -151,6 +151,33 @@ nav a:hover {
     line-height: 1.8;
 }
 
+/* Estilo para o título da seção de pôsteres */
+.section-title {
+    color: #ff4c4c;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Adicionando uma animação de suavização no título da seção */
+.section-title {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Seção principal com pôsteres de filme */
 .section-posters {
     display: flex;
@@ -232,3 +259,20 @@ footer p a:hover {
     text-decoration: underline;
 }
 
+/* Ajustes gerais para responsividade */
+@media (max-width: 768px) {
+    .intro {
+        padding: 20px;
+        font-size: 1.2rem;
+    }
+
+    .section-posters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-posters img {
+        width: 150px;
+        height: 225px;
+    }
+}
