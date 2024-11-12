@@ -141,12 +141,12 @@ footer {
     align-items: center;
     flex-direction: column;
     padding: 20px;
-    background-color: rgba(74, 112, 133, 0.9);
+    background-color: #2C3E50; /* Cor de fundo do rodapé atualizada */
     color: #cccccc;
     font-size: 0.9rem;
     text-align: center;
     margin-top: auto; /* Para manter o rodapé fixado na parte inferior */
-    box-shadow: 0px -4px 10px rgba(74, 112, 133, 0.9);
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.4);
 }
 
 footer p {
