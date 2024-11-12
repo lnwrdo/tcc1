@@ -7,7 +7,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Faz o body ocupar a altura total da tela */
+    min-height: 100vh;
 }
 
 /* Estilo do header */
@@ -15,15 +15,22 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 20px 40px;
+    background-color: rgba(19, 28, 33, 0.9); /* Fundo semi-transparente */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Sombra suave para destacar */
 }
 
-/* Ajuste do título para a direita e aumento do tamanho */
+/* Ajuste do título */
 h1 {
     color: #ff4c4c;
     margin: 0;
-    font-size: 3rem; /* Aumenta o tamanho do título */
-    padding-left: 60px; /* Move o título para a direita */
+    font-size: 3rem;
+    padding-left: 60px;
+    transition: color 0.3s ease; /* Efeito de transição na cor */
+}
+
+h1:hover {
+    color: #ff7878; /* Cor mais clara no hover */
 }
 
 /* Navegação */
@@ -32,7 +39,6 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    transform: translateX(-150px); /* Ajuste este valor para mover os itens para a esquerda */
 }
 
 nav li {
@@ -43,6 +49,12 @@ nav a {
     color: #ec1313;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease; /* Transição suave */
+}
+
+nav a:hover {
+    color: #ff7878; /* Cor mais clara no hover */
+    text-decoration: underline; /* Sublinha no hover para melhor feedback visual */
 }
 
 /* Estilo da seção de introdução */
@@ -51,12 +63,37 @@ nav a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-align: left; /* Alinha os parágrafos à esquerda */
+    text-align: left;
     padding: 40px;
     font-size: 1.5rem;
     font-weight: bold;
     line-height: 1.8;
-    margin: auto; /* Centraliza horizontalmente */
+    margin: auto;
     max-width: 60%;
     color: #f2f2f2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0,
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 40px;
+    flex-grow: 1;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra leve para destacar o bloco de texto */
+}
+
+/* Botão para tornar a navegação mais atraente */
+button {
+    background-color: #ff4c4c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra leve */
+}
+
+button:hover {
+    background-color: #ff7878;
+    transform: scale(1.05); /* Aumenta ligeiramente o botão no hover */
+}
