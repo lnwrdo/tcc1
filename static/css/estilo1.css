@@ -133,3 +133,34 @@ button:hover {
     background-color: #ff7878;
     transform: scale(1.05);
 }
+
+/* Estilo do rodapé */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgba(19, 28, 33, 0.9);
+    color: #cccccc;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: auto; /* Para manter o rodapé fixado na parte inferior */
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.4);
+}
+
+footer p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+footer p a {
+    color: #ec1313;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer p a:hover {
+    color: #ff7878;
+    text-decoration: underline;
+}
