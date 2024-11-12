@@ -44,7 +44,7 @@ nav a {
 
 /* Estilo da seção de introdução */
 .intro {
-    padding-top: 50px; /* Ajuste este valor para mover a seção mais para baixo */
+    padding-top: 100px; /* Ajuste este valor para mover a seção mais para baixo */
     margin-top: 20px; /* Ajuste adicional para mais controle de posição */
     display: flex;
     justify-content: center;
