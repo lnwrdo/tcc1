@@ -127,16 +127,6 @@ nav a:hover {
   background-image: url('https://example.com/rolo-filme-icon.png'); /* URL de exemplo para o ícone de rolo de filme */
 }
 
-/* Efeito de neve de película */
-@keyframes film-grain {
-  0%, 100% {
-      background-position: 0 0;
-  }
-  50% {
-      background-position: 100px 100px;
-  }
-}
-
 .intro::before {
   content: '';
   position: absolute;
