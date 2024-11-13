@@ -8,11 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url('https://example.com/textura-pelicula.png'); /* URL de exemplo para o fundo de película */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Para que o fundo fique fixo enquanto rola */
-  align-items: center; /* Centraliza os elementos verticalmente */
+  align-items: center;
 }
 
 /* Estilo do header */
@@ -23,12 +19,13 @@ header {
   padding: 20px 40px;
   background-color: rgba(19, 28, 33, 0.9);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-  position: relative;
-  z-index: 2; /* Aumentado para garantir que esteja acima de outros elementos */
-  width: 100%; /* Ocupa toda a largura da tela */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 }
 
-/* Animação de brilho mais suave no título */
+/* Animação de brilho no título */
 h1 {
   color: #ff4c4c;
   margin: 0;
@@ -37,7 +34,7 @@ h1 {
   position: relative;
   animation: glow 2s ease-in-out infinite alternate;
   transition: color 0.3s ease;
-  z-index: 3; /* Adicionado para garantir que esteja acima de pseudo-elementos */
+  z-index: 3;
 }
 
 @keyframes glow {
@@ -49,13 +46,12 @@ h1 {
   }
 }
 
-/* Navegação */
 nav ul {
   display: flex;
   list-style-type: none;
   padding: 0;
   margin: 0;
-  z-index: 3; /* Adicionado para garantir interatividade */
+  z-index: 3;
 }
 
 nav li {
@@ -67,8 +63,6 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
-  z-index: 3; /* Adicionado para garantir que os links estejam acessíveis */
-  position: relative;
 }
 
 nav a:hover {
@@ -76,17 +70,27 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Seção de Imagem em Tela Cheia */
+/* Imagem em tela cheia */
 .full-screen-image {
-    margin-top: 80px; /* Ajusta para a altura do header */
-    width: 100vw;
-    height: calc(100vh - 80px); /* Altura da tela menos o header */
-    background-image: url('https://lh3.googleusercontent.com/pw/AP1GczPgs091xpnI35t4-ju1sdlzXXuRe0YUQRZMx6bpUJtgG9Wk3PcImfvIBLxmnRZQi1y7DCSSRwZKElT4VzAgWcgBfzfJZ6YB2DNnjnGb629BM08WelSIvOTjnZLll9cMhtfUjRdA4JqJzxbL2k6L7sc0=w1600-h900-s-no-gm?authuser=0'); /* Substitua pelo URL da sua imagem */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    z-index: 1;
+  width: 100%;
+  height: 100vh; /* Ocupa toda a altura da tela */
+  background-image: url('https://photos.app.goo.gl/FMZj6tiBqtth843C6'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 0;
+  margin-top: 80px; /* Ajusta para ficar logo abaixo do header */
+}
+
+.intro-text {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 2;
 }
 
 /* Outros estilos e seções permanecem como estavam... */
