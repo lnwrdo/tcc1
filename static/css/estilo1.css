@@ -170,7 +170,7 @@ nav a:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     animation: fadeIn 1.5s ease-in-out;
     z-index: 3;
-    margin-top: 0; /* Remove a margem superior do título */
+    margin-top: 50px; /* Adiciona uma margem superior de 50 pixels */
 }
 
 @keyframes fadeIn {
