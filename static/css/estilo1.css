@@ -76,32 +76,20 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Ícones decorativos de claquete e rolo de filme */
-.intro::before,
-.intro::after {
-  content: '';
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.3;
-  z-index: 1; /* Mantido abaixo da navegação */
+/* Seção de Imagem em Tela Cheia */
+.full-screen-image {
+    margin-top: 80px; /* Ajusta para a altura do header */
+    width: 100vw;
+    height: calc(100vh - 80px); /* Altura da tela menos o header */
+    background-image: url('https://example.com/sua-imagem.jpg'); /* Substitua pelo URL da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
 }
 
-.intro::before {
-  width: 50px;
-  height: 50px;
-  top: -20px;
-  left: -20px;
-  background-image: url('https://example.com/claquete-icon.png'); /* URL de exemplo para o ícone de claquete */
-}
-
-.intro::after {
-  width: 50px;
-  height: 50px;
-  bottom: -20px;
-  right: -20px;
-  background-image: url('https://example.com/rolo-filme-icon.png'); /* URL de exemplo para o ícone de rolo de filme */
-}
+/* Outros estilos e seções permanecem como estavam... */
 
 /* Efeito de neve de película */
 @keyframes film-grain {
@@ -113,6 +101,7 @@ nav a:hover {
   }
 }
 
+/* Restante dos estilos existentes... */
 .intro::before {
   content: '';
   position: absolute;
