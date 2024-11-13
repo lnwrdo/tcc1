@@ -195,7 +195,7 @@ nav a:hover {
     scroll-snap-type: x mandatory;
     z-index: 1;
     margin-bottom: 30px; /* Adiciona margem inferior para espaçamento */
-    margin-top: 50px; /* Adiciona margem superior para mover os posters para cima */
+    margin-top: 80px; /* Adiciona margem superior para mover os posters para cima */
 }
 
 .section-posters img {
