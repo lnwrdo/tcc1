@@ -16,6 +16,12 @@
             </ul>
         </nav>
     </header>
+    
+    <!-- Nova div para a imagem -->
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/static/images/aaaaaaaaaaaaaaaaaaaa.jpeg') }}" alt="Imagem principal">
+    </div>
+
     <script>
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {

@@ -8,11 +8,12 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url('https://example.com/textura-pelicula.png'); /* URL de exemplo para o fundo de película */
+  background-image: url('https://example.com/textura-pelicula.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Para que o fundo fique fixo enquanto rola */
-  align-items: center; /* Centraliza os elementos verticalmente */
+  background-attachment: fixed;
+  align-items: center;
+  overflow-x: hidden;
 }
 
 /* Estilo do header */
@@ -23,9 +24,26 @@ header {
   padding: 20px 40px;
   background-color: rgba(19, 28, 33, 0.9);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Estilos para a imagem em tela cheia */
+.hero-image {
+  width: 100%;
+  height: calc(100vh - 89px);
+  overflow: hidden;
   position: relative;
-  z-index: 2; /* Aumentado para garantir que esteja acima de outros elementos */
-  width: 100%; /* Ocupa toda a largura da tela */
+  z-index: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Animação de brilho mais suave no título */
@@ -37,7 +55,7 @@ h1 {
   position: relative;
   animation: glow 2s ease-in-out infinite alternate;
   transition: color 0.3s ease;
-  z-index: 3; /* Adicionado para garantir que esteja acima de pseudo-elementos */
+  z-index: 3;
 }
 
 @keyframes glow {
@@ -55,7 +73,7 @@ nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  z-index: 3; /* Adicionado para garantir interatividade */
+  z-index: 3;
 }
 
 nav li {
@@ -67,7 +85,7 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
-  z-index: 3; /* Adicionado para garantir que os links estejam acessíveis */
+  z-index: 3;
   position: relative;
 }
 
@@ -84,7 +102,7 @@ nav a:hover {
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.3;
-  z-index: 1; /* Mantido abaixo da navegação */
+  z-index: 1;
 }
 
 .intro::before {
@@ -92,7 +110,7 @@ nav a:hover {
   height: 50px;
   top: -20px;
   left: -20px;
-  background-image: url('https://example.com/claquete-icon.png'); /* URL de exemplo para o ícone de claquete */
+  background-image: url('https://example.com/claquete-icon.png');
 }
 
 .intro::after {
@@ -100,7 +118,7 @@ nav a:hover {
   height: 50px;
   bottom: -20px;
   right: -20px;
-  background-image: url('https://example.com/rolo-filme-icon.png'); /* URL de exemplo para o ícone de rolo de filme */
+  background-image: url('https://example.com/rolo-filme-icon.png');
 }
 
 /* Efeito de neve de película */
@@ -120,7 +138,7 @@ nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://example.com/grain.png'); /* URL de exemplo para o efeito de neve de película */
+  background-image: url('https://example.com/grain.png');
   background-size: cover;
   opacity: 0.05;
   animation: film-grain 10s infinite linear;
@@ -146,7 +164,7 @@ nav a:hover {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   animation: fadeIn 1.5s ease-in-out;
   z-index: 3;
-  margin-top: 150px; /* Ajusta a margem superior para 150px */
+  margin-top: 150px;
 }
 
 @keyframes fadeIn {
@@ -170,8 +188,8 @@ nav a:hover {
   margin: auto;
   scroll-snap-type: x mandatory;
   z-index: 1;
-  margin-bottom: 30px; /* Adiciona margem inferior para espaçamento */
-  margin-top: 8px; /* Adiciona margem superior para mover os posters para cima */
+  margin-bottom: 30px;
+  margin-top: 8px;
 }
 
 .section-posters img {
@@ -213,23 +231,15 @@ button::before {
   font-size: 1.2rem;
 }
 
-.recommendation {
-  margin-top: 100px; /* Ajusta a margem superior do recomendador */
-  width: 100%; /* Ocupa toda a largura da tela */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centraliza o conteúdo horizontalmente */
-}
-
 /* Estilos para a seção de recomendação de filmes */
 .recommendation {
-  margin-top: 50px; /* Adiciona uma margem superior de 50px */
+  margin-top: 50px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center; /* Centraliza o conteúdo horizontalmente */
-  margin-bottom: 40px; /* Adiciona margem inferior para espaçamento */
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .recommendation h2 {
@@ -238,7 +248,7 @@ button::before {
   font-weight: bold;
   margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-  animation: fadeIn 1.5s ease-in-out; /* Aplica a animação fadeIn */
+  animation: fadeIn 1.5s ease-in-out;
   z-index: 3;
 }
 
@@ -260,9 +270,9 @@ button::before {
   font-size: 1rem;
   background-color: #131C21;
   color: #ffffff;
-  appearance: none; /* Esconde o seletor padrão */
-  -webkit-appearance: none; /* Para Chrome e Safari */
-  -moz-appearance: none; /* Para Firefox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   cursor: pointer;
 }
 
@@ -271,36 +281,12 @@ button::before {
   color: #ffffff;
 }
 
-.recommendation button {
-  background-color: #ff4c4c;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.recommendation button:hover {
-  background-color: #ff7878;
-  transform: scale(1.05);
-}
-
-.recommendation button::before {
-  content: '▶️';
-  margin-right: 10px;
-  font-size: 1.2rem;
-}
-
 .recomendacao-filmes {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin-top: 20px; /* Adiciona margem superior para espaçamento */
+  margin-top: 20px;
 }
 
 .recomendacao-filmes .filme {
