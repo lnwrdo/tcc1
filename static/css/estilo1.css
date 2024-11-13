@@ -5,9 +5,6 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* Estilo do header */
@@ -69,25 +66,25 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Imagem em tela cheia */
-.full-screen-image {
-  width: 100%;
-  height: calc(100vh - 80px); /* Ajusta para que a imagem ocupe o espaço abaixo da barra de navegação */
-  background-image: url("{{ url_for('static', filename='images/https://photos.google.com/share/AF1QipNpC-181JazjOVh4s9bydCPV-2u9Msuxb4b2aII60CFEayApnjKGeEXnUmaMMeuCw/photo/AF1QipMPaF_LOCASzljcaq1qYiwyylrpNXNwcrgUVgtO?key=UjBjYjVJcG9LMDY2UjVuVWFjODd3NVpLYXJpcW9R') }}"); /* Substitua pelo caminho da sua imagem */
+/* Imagem de fundo em tela cheia */
+.background-image {
+  background-image: url("{{ url_for('static', filename='images/https://photos.google.com/share/AF1QipOwxDpe29XPQ62wHmkLDgGkcaF7QVB4iJehak4i8QKCxv8lzDzOhaa7qK5-7Hi7tA/photo/AF1QipNzaDlkI6j_x6yucS_sw5sjM-Mhfm3q6rsRTTY1?key=THBFLWhmTm1GRjV6YlFUczZVZnRSWWRyenJLSml3') }}"); /* Substitua pelo caminho da sua imagem */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: 80px; /* Ajusta para que a imagem comece logo abaixo do header */
+  height: 100vh;
+  margin-top: 80px; /* Altura do header para evitar sobreposição */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Texto de introdução */
 .intro-text {
-  position: absolute;
-  bottom: 20%;
-  left: 10%;
   color: white;
   font-size: 2rem;
   font-weight: bold;
-  z-index: 2;
+  text-align: center;
 }
 
 /* Outros estilos e seções permanecem como estavam... */
