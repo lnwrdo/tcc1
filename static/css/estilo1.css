@@ -73,13 +73,12 @@ nav a:hover {
 /* Imagem em tela cheia */
 .full-screen-image {
   width: 100%;
-  height: 100vh; /* Ocupa toda a altura da tela */
-  background-image: url('https://photos.google.com/share/AF1QipO3x9zqS8jN3I2cPjYjW0gubcdArmu3OJcvju0GnUmimyzSK1Hcvv62IYeC_iwObA/photo/AF1QipOyTzY24KPBPSIq91322_X93BbuldfQXBfpie2D?key=RmhBcXZHNE9kZW5IOE44Uko0YkxHWUYza1BxQjhn'); /* Substitua pelo caminho da sua imagem */
+  height: calc(100vh - 80px); /* Ajusta para que a imagem ocupe o espaço abaixo da barra de navegação */
+  background-image: url("{{ url_for('static', filename='images/https://photos.google.com/share/AF1QipNpC-181JazjOVh4s9bydCPV-2u9Msuxb4b2aII60CFEayApnjKGeEXnUmaMMeuCw/photo/AF1QipMPaF_LOCASzljcaq1qYiwyylrpNXNwcrgUVgtO?key=UjBjYjVJcG9LMDY2UjVuVWFjODd3NVpLYXJpcW9R') }}"); /* Substitua pelo caminho da sua imagem */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  top: 0;
   margin-top: 80px; /* Ajusta para ficar logo abaixo do header */
 }
 
