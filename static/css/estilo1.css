@@ -16,48 +16,28 @@ body {
 }
 
 /* Estilo do header */
-/* Estilos da Barra de Navegação */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  color: #fff;
-  z-index: 10;
-}
-
-header h1 {
-  padding: 10px;
-  margin: 0;
-  text-align: center;
-  color: #fff;
-}
-
-header nav ul {
-  list-style: none;
-  padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(19, 28, 33, 0.9);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 2; /* Aumentado para garantir que esteja acima de outros elementos */
+  width: 100%; /* Ocupa toda a largura da tela */
 }
 
-header nav ul li {
-  margin: 0 15px;
-}
-
-header nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Estilos da Imagem em Tela Cheia */
-.full-screen-image {
-  margin-top: 80px; /* Compensa a altura do header */
-  width: 100vw;
-  height: calc(100vh - 80px); /* Ajusta a altura para ocupar a tela inteira abaixo da navbar */
-  background-image: url('https://ibb.co/xs5qM7j'); /* Substitua pelo caminho da sua imagem */
-  background-size: cover;
-  background-position: center;
+/* Animação de brilho mais suave no título */
+h1 {
+  color: #ff4c4c;
+  margin: 0;
+  font-size: 3rem;
+  padding-left: 60px;
+  position: relative;
+  animation: glow 2s ease-in-out infinite alternate;
+  transition: color 0.3s ease;
+  z-index: 3; /* Adicionado para garantir que esteja acima de pseudo-elementos */
 }
 
 @keyframes glow {
