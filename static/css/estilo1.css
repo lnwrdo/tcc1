@@ -1,6 +1,6 @@
 /* Estilos globais */
 body {
-  background-color: #131C21;
+  background-color: #000000;
   color: #ffffff;
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -22,8 +22,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: rgba(19, 28, 33, 0.9);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0);
   position: sticky;
   top: 0;
   z-index: 1000;
