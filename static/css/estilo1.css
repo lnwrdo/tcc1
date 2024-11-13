@@ -52,10 +52,10 @@ header nav ul li a {
 
 /* Estilos da Imagem em Tela Cheia */
 .full-screen-image {
-  margin-top: 100px; /* Compensa a altura do header */
+  margin-top: 80px; /* Compensa a altura do header */
   width: 100vw;
   height: calc(100vh - 80px); /* Ajusta a altura para ocupar a tela inteira abaixo da navbar */
-  background-image: url('https://photos.fife.usercontent.google.com/pw/AP1GczMuei78s9RQMjHeaX122-7Inu0KOs_Pd59wkwSGsmIquq5locIjLxKf=w1634-h919-s-no-gm?authuser=0'); /* Substitua pelo caminho da sua imagem */
+  background-image: url('https://ibb.co/xs5qM7j'); /* Substitua pelo caminho da sua imagem */
   background-size: cover;
   background-position: center;
 }
