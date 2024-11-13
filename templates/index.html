@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta tag para responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
     <title>Página Inicial</title>
 </head>
@@ -11,7 +11,6 @@
         <h1>ANTES DO FRAME</h1>
         <nav>
             <ul>
-                <!-- Links de navegação -->
                 <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
                 <li><a href="{{ url_for('escolha_filme') }}">Escolha do Filme</a></li>
             </ul>
@@ -23,31 +22,20 @@
         <p class="intro-text">Bem-vindo ao nosso site! Esperamos que sua jornada por aqui seja tão empolgante quanto a nossa tem sido em desenvolvê-lo. E, claro, que você encontre o próximo filme que vai te marcar para sempre.</p>
     </section>
 
-    <!-- Título da seção de pôsteres -->
     <h2 class="section-title">FILMES DESTAQUES DE 2024</h2>
 
-    <!-- Seção de pôsteres de filmes -->
     <div class="section-posters">
         <img src="https://br.web.img3.acsta.net/r_1920_1080/pictures/23/09/02/01/06/5918458.jpg" alt="Poster de Duna 2">
         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtpn0RVXzkursHIydCWRm0XwvNFaL73RqhL0aXYhjRSCDT32V-EkkibdBz79lIco9LfuCciHUzjda4PWRLMDwFJ2UdN7f2r7DPbrJ5W_Fc0W00lI9IjEbTaein5qzZOPfbnsClJkIYORZQak4yJQgLFI3y1boaIIv6doyp36lXRIRBtIMQMaJcQAI_o6D9/s500/Ainda_Estou_Aqui_" alt="Poster de outro filme">
         <img src="https://xl.movieposterdb.com/24_09/2024/17526714/xl_the-substance-movie-poster_7baa2e4b.jpg?v=2024-11-04%2014:44:11" alt="Poster do terceiro filme">
     </div>
 
-    <!-- Adicione um script básico para verificação -->
     <script>
-        // Verifica se os links estão funcionando e exibe uma mensagem no console quando clicados.
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 console.log('Link clicado:', link.href);
             });
         });
     </script>
-
-    <!-- Rodapé opcional -->
-    <footer>
-        <p>&copy; 2024 Antes do Frame. Todos os direitos reservados.</p>
-        <p>Desenvolvido por alunos da UNISAGRADO: Leonardo, Rafael e Rodolfo.</p>
-    </footer>
 </body>
 </html>
-
