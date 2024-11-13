@@ -81,7 +81,7 @@ nav a:hover {
     margin-top: 80px; /* Ajusta para a altura do header */
     width: 100vw;
     height: calc(100vh - 80px); /* Altura da tela menos o header */
-    background-image: url('https://example.com/sua-imagem.jpg'); /* Substitua pelo URL da sua imagem */
+    background-image: url('https://lh3.googleusercontent.com/pw/AP1GczPgs091xpnI35t4-ju1sdlzXXuRe0YUQRZMx6bpUJtgG9Wk3PcImfvIBLxmnRZQi1y7DCSSRwZKElT4VzAgWcgBfzfJZ6YB2DNnjnGb629BM08WelSIvOTjnZLll9cMhtfUjRdA4JqJzxbL2k6L7sc0=w1600-h900-s-no-gm?authuser=0'); /* Substitua pelo URL da sua imagem */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
