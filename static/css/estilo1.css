@@ -22,6 +22,8 @@ header {
     padding: 20px 40px;
     background-color: rgba(19, 28, 33, 0.9);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 2; /* Aumentado para garantir que esteja acima de outros elementos */
 }
 
 /* Animação de brilho mais suave no título */
@@ -33,6 +35,7 @@ h1 {
     position: relative;
     animation: glow 2s ease-in-out infinite alternate;
     transition: color 0.3s ease;
+    z-index: 3; /* Adicionado para garantir que esteja acima de pseudo-elementos */
 }
 
 @keyframes glow {
@@ -50,6 +53,7 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    z-index: 3; /* Adicionado para garantir interatividade */
 }
 
 nav li {
@@ -61,6 +65,8 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    z-index: 3; /* Adicionado para garantir que os links estejam acessíveis */
+    position: relative;
 }
 
 nav a:hover {
@@ -69,56 +75,38 @@ nav a:hover {
 }
 
 /* Estilo da seção de introdução */
-/* Ajuste da seção de introdução */
 .intro {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: left;
-    padding: 20px; /* Diminuído para deixar mais estreito */
-    font-size: 1.2rem; /* Ajuste para deixar menor */
+    padding: 20px;
+    font-size: 1.2rem;
     font-weight: bold;
-    line-height: 1.5; /* Ajustado para melhor proporção */
-    margin: 40px auto 20px; /* Adicionado espaço em cima */
-    max-width: 40%; /* Reduzido para ficar mais estreito */
+    line-height: 1.5;
+    margin: 40px auto 20px;
+    max-width: 40%;
     color: #f2f2f2;
-    text-transform: uppercase; /* Transformação para maiúsculo */
+    text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    border: 6px solid rgba(255, 255, 255, 0.1); /* Borda diminuída */
+    border: 6px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1; /* Mantido abaixo dos elementos de navegação */
 }
-
-/* Ajuste da seção principal com pôsteres de filme */
-.section-posters {
-    display: flex;
-    justify-content: space-around; /* Para criar espaço uniforme entre os pôsteres */
-    gap: 10px; /* Reduzido para caber os três pôsteres */
-    padding: 20px 0;
-    max-width: 70%; /* Ajuste para caber bem na página */
-    margin: auto;
-}
-
-.section-posters img {
-    width: 180px; /* Ajustado para melhorar a disposição */
-    height: 270px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-}
-
 
 /* Ícones decorativos de claquete e rolo de filme */
 .intro::before,
 .intro::after {
     content: '';
     position: absolute;
-    background-image: url('https://example.com/claquete-icon.png'); /* URL de exemplo para o ícone de claquete */
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0.3;
+    z-index: 1; /* Mantido abaixo da navegação */
 }
 
 .intro::before {
@@ -126,6 +114,7 @@ nav a:hover {
     height: 50px;
     top: -20px;
     left: -20px;
+    background-image: url('https://example.com/claquete-icon.png'); /* URL de exemplo para o ícone de claquete */
 }
 
 .intro::after {
@@ -177,11 +166,8 @@ nav a:hover {
     margin-top: 30px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-/* Adicionando uma animação de suavização no título da seção */
-.section-title {
     animation: fadeIn 1.5s ease-in-out;
+    z-index: 3;
 }
 
 @keyframes fadeIn {
@@ -204,6 +190,7 @@ nav a:hover {
     max-width: 90%;
     margin: auto;
     scroll-snap-type: x mandatory;
+    z-index: 1;
 }
 
 .section-posters img {
@@ -249,47 +236,4 @@ button::before {
 footer {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    background-color: rgba(19, 28, 33, 0.9);
-    color: #cccccc;
-    font-size: 0.9rem;
-    text-align: center;
-    margin-top: auto; /* Para manter o rodapé fixado na parte inferior */
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.4);
-}
-
-footer p {
-    margin: 5px 0;
-    line-height: 1.5;
-}
-
-footer p a {
-    color: #ec1313;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer p a:hover {
-    color: #ff7878;
-    text-decoration: underline;
-}
-
-/* Ajustes gerais para responsividade */
-@media (max-width: 768px) {
-    .intro {
-        padding: 20px;
-        font-size: 1.2rem;
-    }
-
-    .section-posters {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .section-posters img {
-        width: 150px;
-        height: 225px;
-    }
-}
+    align-items: center
