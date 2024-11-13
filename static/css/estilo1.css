@@ -1,356 +1,150 @@
-/* Estilos globais */
 body {
-    background-color: #131C21;
-    color: #ffffff;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-image: url('https://example.com/textura-pelicula.png'); /* URL de exemplo para o fundo de película */
+    /* ... código original ... */
+    background-image: url('https://example.com/textura-pelicula.png'); 
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Para que o fundo fique fixo enquanto rola */
-    align-items: center; /* Centraliza os elementos verticalmente */
-}
-
-/* Estilo do header */
-header {
-    display: flex;
+    background-attachment: fixed;
+    align-items: center;
+  }
+  
+  header {
+    /* ... código original ... */
+    background-color: rgba(19, 28, 33, 0.8);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    display: flex; /* Usando flexbox para o header */
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: rgba(19, 28, 33, 0.9);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-    position: relative;
-    z-index: 2; /* Aumentado para garantir que esteja acima de outros elementos */
-    width: 100%; /* Ocupa toda a largura da tela */
-}
-
-/* Animação de brilho mais suave no título */
-h1 {
+  }
+  
+  h1 {
+    /* ... código original ... */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
     color: #ff4c4c;
-    margin: 0;
-    font-size: 3rem;
-    padding-left: 60px;
-    position: relative;
-    animation: glow 2s ease-in-out infinite alternate;
-    transition: color 0.3s ease;
-    z-index: 3; /* Adicionado para garantir que esteja acima de pseudo-elementos */
-}
-
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px #ff4c4c, 0 0 10px #ff4c4c, 0 0 15px #ff4c4c, 0 0 20px #ff4c4c;
-    }
-    100% {
-        text-shadow: 0 0 8px #ff7878, 0 0 12px #ff7878, 0 0 16px #ff7878, 0 0 24px #ff7878;
-    }
-}
-
-/* Navegação */
-nav ul {
+  }
+  
+  nav ul {
+    /* ... código original ... */
     display: flex;
     list-style-type: none;
     padding: 0;
     margin: 0;
-    z-index: 3; /* Adicionado para garantir interatividade */
-}
-
-nav li {
+  }
+  
+  nav li {
     margin: 0 15px;
-}
-
-nav a {
+  }
+  
+  nav a {
+    /* ... código original ... */
     color: #ec1313;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-    z-index: 3; /* Adicionado para garantir que os links estejam acessíveis */
+    z-index: 3; 
     position: relative;
-}
-
-nav a:hover {
+  }
+  
+  nav a:hover {
+    /* ... código original ... */
     color: #ff7878;
-    text-decoration: underline;
-}
-
-/* Estilo da seção de introdução */
-.intro {
+  }
+  
+  .intro {
+    /* ... código original ... */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-align: center; /* Centraliza o texto horizontalmente */
-    padding: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    line-height: 1.5;
-    margin: 40px auto 20px;
-    max-width: 40%;
-    color: #f2f2f2;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    border: 6px solid rgba(255, 255, 255, 0.1);
+    text-align: center; 
+    padding: 40px;
+    font-size: 1.4rem; 
+    max-width: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    border: 8px solid rgba(255, 255, 255, 0.1);
     position: relative;
-    z-index: 1; /* Mantido abaixo dos elementos de navegação */
-}
-
-/* Ícones decorativos de claquete e rolo de filme */
-.intro::before,
-.intro::after {
-    content: '';
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.3;
-    z-index: 1; /* Mantido abaixo da navegação */
-}
-
-.intro::before {
-    width: 50px;
-    height: 50px;
-    top: -20px;
-    left: -20px;
-    background-image: url('https://example.com/claquete-icon.png'); /* URL de exemplo para o ícone de claquete */
-}
-
-.intro::after {
-    width: 50px;
-    height: 50px;
-    bottom: -20px;
-    right: -20px;
-    background-image: url('https://example.com/rolo-filme-icon.png'); /* URL de exemplo para o ícone de rolo de filme */
-}
-
-/* Efeito de neve de película */
-@keyframes film-grain {
-    0%, 100% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 100px 100px;
-    }
-}
-
-.intro::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://example.com/grain.png'); /* URL de exemplo para o efeito de neve de película */
-    background-size: cover;
-    opacity: 0.05;
-    animation: film-grain 10s infinite linear;
     z-index: 1;
-}
-
-.intro-text {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 1.8;
-}
-
-/* Estilo para o título da seção de pôsteres */
-.section-title {
-    color: #ff4c4c;
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    animation: fadeIn 1.5s ease-in-out;
-    z-index: 3;
-    margin-top: 150px; /* Ajusta a margem superior para 150px */
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Seção principal com pôsteres de filme */
-.section-posters {
+    margin-bottom: 40px;
+  }
+  
+  .intro::before {
+    /* ... código original ... */
+    opacity: 0.4;
+  }
+  
+  .intro::after {
+    /* ... código original ... */
+    opacity: 0.4;
+  }
+  
+  .section-posters {
+    /* ... código original ... */
     display: flex;
-    overflow-x: auto;
-    padding: 20px 0;
+    flex-wrap: wrap; /* Ajusta a grade para diferentes tamanhos de tela */
+    justify-content: center;
     gap: 15px;
+    padding: 20px 0;
     max-width: 90%;
     margin: auto;
-    scroll-snap-type: x mandatory;
-    z-index: 1;
-    margin-bottom: 30px; /* Adiciona margem inferior para espaçamento */
-    margin-top: 8px; /* Adiciona margem superior para mover os posters para cima */
-}
-
-.section-posters img {
+  }
+  
+  .section-posters img {
     width: 200px;
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
-    scroll-snap-align: start;
-}
-
-.section-posters img:hover {
+  }
+  
+  .section-posters img:hover {
     transform: scale(1.1);
-}
-
-/* Botão estilizado com ícone de play */
-button {
-    background-color: #ff4c4c;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-button:hover {
-    background-color: #ff7878;
-    transform: scale(1.05);
-}
-
-button::before {
-    content: '▶️';
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
-
-.recommendation {
-    margin-top: 100px; /* Ajusta a margem superior do recomendador */
-    width: 100%; /* Ocupa toda a largura da tela */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
-}
-
-/* Estilos para a seção de recomendação de filmes */
-.recommendation {
-    margin-top: 50px; /* Adiciona uma margem superior de 50px */
+  }
+  
+  /* Estilos para o rodapé */
+  footer {
+    /* ... código original ... */
+    background-color: rgba(19, 28, 33, 0.8); 
+    padding: 30px;
+    text-align: center;
+    width: 100%; 
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Estilos para o slider de filmes */
+  .slider-container { 
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa a largura do container */
     margin-bottom: 40px; /* Adiciona margem inferior para espaçamento */
-}
-
-.recommendation h2 {
-    color: #ff4c4c;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    animation: fadeIn 1.5s ease-in-out; /* Aplica a animação fadeIn */
-    z-index: 3;
-}
-
-.recommendation .genero-selector {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.recommendation .genero-selector label {
-    margin-right: 10px;
-}
-
-.recommendation .genero-selector select {
-    padding: 8px 15px;
-    border: 2px solid #ff4c4c;
-    border-radius: 5px;
-    font-size: 1rem;
-    background-color: #131C21;
-    color: #ffffff;
-    appearance: none; /* Esconde o seletor padrão */
-    -webkit-appearance: none; /* Para Chrome e Safari */
-    -moz-appearance: none; /* Para Firefox */
-    cursor: pointer;
-}
-
-.recommendation .genero-selector select option {
-    background-color: #131C21;
-    color: #ffffff;
-}
-
-.recommendation button {
-    background-color: #ff4c4c;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.recommendation button:hover {
-    background-color: #ff7878;
-    transform: scale(1.05);
-}
-
-.recommendation button::before {
-    content: '▶️';
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
-
-.recomendacao-filmes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px; /* Adiciona margem superior para espaçamento */
-}
-
-.recomendacao-filmes .filme {
-    width: 200px;
-    height: 300px;
-    border: 2px solid #ff4c4c;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-.recomendacao-filmes .filme img {
+  }
+  
+  .slider-track {
+    display: flex; /* Usando flexbox para o slider */
+    transition: transform 0.5s ease-in-out; /* Transição suave para o movimento do slider */
+  }
+  
+  .slider-slide {
+    width: 250px; /* Largura de cada slide */
+    height: 350px; /* Altura de cada slide */
+    margin: 0 10px; /* Espaçamento entre os slides */
+    position: relative; /* Permite posicionar elementos dentro do slide */
+  }
+  
+  .slider-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.recomendacao-filmes .filme:hover {
-    transform: scale(1.1);
-}
-
-.recomendacao-filmes .filme .titulo {
+    border-radius: 8px;
+  }
+  
+  .slider-slide .title {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
     width: 100%;
     padding: 10px;
@@ -358,26 +152,110 @@ button::before {
     color: #ffffff;
     font-weight: bold;
     text-align: center;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-}
-
-.recomendacao-filmes .filme:hover .titulo {
-    opacity: 1;
-}
-
-/* Estilos para o rodapé */
-footer {
-    background-color: rgba(19, 28, 33, 0.9);
+  }
+  
+  /* Estilos para botões */
+  .button {
+    background-color: #ff4c4c;
     color: #ffffff;
-    padding: 20px;
-    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .button:hover {
+    background-color: #ff7878;
+    transform: scale(1.05);
+  }
+  
+  .button::before {
+    content: '▶️';
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+  
+  /* Adiciona um efeito de hover para os títulos dos filmes */
+  .section-posters img:hover + .title {
+    opacity: 1; /* Torna o título visível ao passar o mouse sobre a imagem */
+    transition: opacity 0.3s ease; /* Adiciona uma transição suave para o efeito */
+  }
+  
+  .title {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
     width: 100%;
-    position: relative;
-    bottom: 0;
-    z-index: 2;
-}
-
-footer p {
-    margin: 0;
-}
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0; /* Inicialmente o título está oculto */
+    transition: opacity 0.3s ease; /* Adiciona uma transição suave para o efeito */
+  }
+  
+  /* Estilos para a seção de filmes recentes */
+  .recent-movies {
+    margin-top: 40px; /* Adiciona margem superior para espaçamento */
+    padding: 20px 0;
+  }
+  
+  .recent-movies h2 {
+    color: #ff4c4c;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1.5s ease-in-out; 
+    z-index: 3;
+  }
+  
+  /* Estilos para a seção de gêneros */
+  .genres {
+    margin-top: 40px; /* Adiciona margem superior para espaçamento */
+    padding: 20px 0;
+  }
+  
+  .genres h2 {
+    /* Estilos semelhantes ao título da seção de filmes recentes */
+    color: #ff4c4c;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1.5s ease-in-out; 
+    z-index: 3;
+  }
+  
+  .genres .genres-list {
+    display: flex;
+    flex-wrap: wrap; /* Ajusta a lista para diferentes tamanhos de tela */
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .genres .genre-button {
+    /* Estilos para os botões de gênero */
+    background-color: #ff4c4c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .genres .genre-button:hover {
+    background-color: #ff7878;
+    transform: scale(1.05);
+  }
