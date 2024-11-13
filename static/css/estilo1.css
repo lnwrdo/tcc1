@@ -236,16 +236,6 @@ button::before {
     font-size: 1.2rem;
 }
 
-/* Estilo do rodapé */
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center
-    footer {
-        display: none;
-    }
-    
-
 .recommendation {
     margin-top: 100px; /* Ajusta a margem superior do recomendador */
     width: 100%; /* Ocupa toda a largura da tela */
