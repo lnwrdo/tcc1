@@ -15,29 +15,52 @@ body {
   align-items: center; /* Centraliza os elementos verticalmente */
 }
 
-/* Estilo do header */
+/* Estilos para o cabeçalho */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background-color: rgba(19, 28, 33, 0.9);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-  position: relative;
-  z-index: 2; /* Aumentado para garantir que esteja acima de outros elementos */
-  width: 100%; /* Ocupa toda a largura da tela */
+  padding: 1em;
+  background-color: #121212;
+  color: #FF4747;
 }
 
-/* Animação de brilho mais suave no título */
-h1 {
-  color: #ff4c4c;
+header h1 {
+  font-size: 2em;
+  font-weight: bold;
   margin: 0;
-  font-size: 3rem;
-  padding-left: 60px;
-  position: relative;
-  animation: glow 2s ease-in-out infinite alternate;
-  transition: color 0.3s ease;
-  z-index: 3; /* Adicionado para garantir que esteja acima de pseudo-elementos */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #FF4747;
+  text-decoration: none;
+}
+
+/* Estilos para a seção de boas-vindas */
+.welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: calc(100vh - 80px); /* Ajuste a altura conforme necessário */
+  padding-left: 5%;
+  background-image: url('https://lh3.googleusercontent.com/pw/AP1GczObQLu6tEUWUJyG9WVcnJHOHQHnBL11oC-SK1Hc77zW4NggPqvH9362pjPJiSALgU87_hXv1uNpbcvlgUI-jD4dsF7U13PippitDWWyQPOQx6rCBKIP4CYLsCTpwpbUbEFwO39j6xlXiQCnoZ1g2uWm=w1634-h919-s-no-gm?authuser=0'); /* Substitua pelo caminho da imagem */
+  background-size: cover;
+  background-position: center;
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+}
+
+.welcome-section h2 {
+  font-size: 3em;
+  font-weight: bold;
 }
 
 @keyframes glow {
