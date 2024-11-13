@@ -73,7 +73,7 @@ nav a:hover {
 .full-screen-image {
   width: 100%;
   height: calc(100vh - 80px); /* Ajusta para que a imagem ocupe o espaço abaixo da barra de navegação */
-  background-image: url("{{ url_for('static', filename='images/sua-imagem.jpg') }}"); /* Substitua pelo caminho da sua imagem */
+  background-image: url("{{ url_for('static', filename='images/https://photos.google.com/share/AF1QipNpC-181JazjOVh4s9bydCPV-2u9Msuxb4b2aII60CFEayApnjKGeEXnUmaMMeuCw/photo/AF1QipMPaF_LOCASzljcaq1qYiwyylrpNXNwcrgUVgtO?key=UjBjYjVJcG9LMDY2UjVuVWFjODd3NVpLYXJpcW9R') }}"); /* Substitua pelo caminho da sua imagem */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
