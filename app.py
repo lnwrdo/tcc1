@@ -42,5 +42,8 @@ def recommend():
 
 if __name__ == '__main__':
     app.run(debug=True)
+# Certifique-se de que a descrição não tenha vírgulas desnecessárias
+for movie in movies:
+    movie['Description'] = movie['Description'].replace(', ', ' ')
 
     
