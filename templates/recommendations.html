@@ -5,65 +5,67 @@
     <title>Recomendações de Filmes</title>
     <style>
         body.recommendation-page {
-            background-color: black;
-            color: white;
+            background-color: #121212;
+            color: #f5f5f5;
             font-family: 'Arial', sans-serif;
-            margin: 20px;
-            position: relative;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             min-height: 100vh;
-            padding-bottom: 50px; /* Espaço para o botão */
+            padding-top: 20px;
         }
         .recommendation-title {
-            text-align: center;
             color: #ff4c4c;
-            margin-bottom: 20px;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            margin-bottom: 30px;
         }
         .recommendation-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            padding: 0;
-            margin: 40px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 80%;
+            max-width: 1200px;
+            margin-bottom: 60px;
         }
         .recommendation-item {
-            background-color: #222;
-            border-radius: 10px;
+            background-color: #1f1f1f;
+            border-radius: 15px;
             padding: 20px;
-            width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .recommendation-item:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
         .movie-title {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: #ff4c4c;
             margin-bottom: 10px;
         }
         .movie-details {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #cccccc;
         }
         .movie-description {
-            margin-top: 10px;
-            color: #bbb;
+            margin-top: 15px;
+            color: #aaaaaa;
             font-style: italic;
         }
         .back-button {
-            position: absolute;
-            bottom: 100px;
-            right: 20px;
+            position: fixed;
+            bottom: 50px;
+            right: 30px;
             background-color: #ff4c4c;
             color: white;
             text-decoration: none;
             font-weight: bold;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
         }
         .back-button:hover {
@@ -72,7 +74,7 @@
     </style>
 </head>
 <body class="recommendation-page">
-    <h1 class="recommendation-title">SUAS RECOMENDAÇÕES DE FILMES PARA ASSISTIR</h1>
+    <h1 class="recommendation-title">Suas Recomendações de Filmes para Assistir</h1>
     <ul class="recommendation-list">
         {% for movie in movies %}
             <li class="recommendation-item">
@@ -89,3 +91,4 @@
     <a href="/" class="back-button">Voltar</a>
 </body>
 </html>
+
