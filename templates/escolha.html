@@ -20,7 +20,7 @@
     <section class="recommendation">
         <h2>RECOMENDADOR DE FILMES:</h2>
         <form action="{{ url_for('recommend') }}" method="post">
-            <label for="genre">Selecione o Gênero:</label>
+            <label for="genre" style="font-family: 'Poppins', sans-serif;">Selecione o Gênero:</label>
             <select name="genre" id="genre">
                 {% for genre in genres %}
                     <option value="{{ genre }}">{{ genre }}</option>
