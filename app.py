@@ -25,7 +25,7 @@ def escolha_filme():
     return render_template('escolha.html', genres=genres)
 
 @app.route('/sobre')
-def sobre():
+def sobre_o_projeto():
     genres = df['Genre'].unique()  # Obtenha os gêneros únicos
     return render_template('sobre.html', genres=genres)
 
