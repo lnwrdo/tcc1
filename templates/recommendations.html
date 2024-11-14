@@ -30,15 +30,15 @@
             margin-bottom: 60px;
         }
         .recommendation-item {
-            background-color: #000000;
+            background-color: #1f1f1f;
             border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 6px 15px rgba(2, 2, 2, 0.397);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         .recommendation-item:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.445);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
         .movie-title {
             font-size: 1.7rem;
@@ -74,7 +74,7 @@
     </style>
 </head>
 <body class="recommendation-page">
-    <h1 class="recommendation-title">OS SEUS FILMES GERADOS FORAM ESSES:</h1>
+    <h1 class="recommendation-title">Suas Recomendações de Filmes para Assistir</h1>
     <ul class="recommendation-list">
         {% for movie in movies %}
             <li class="recommendation-item">
@@ -91,4 +91,3 @@
     <a href="/" class="back-button">Voltar</a>
 </body>
 </html>
-
