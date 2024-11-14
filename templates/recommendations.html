@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Recomendações de Filmes</title>
+    <link rel="stylesheet" href="seu_estilo.css">
 </head>
-<body>
-    <h1>SUAS RECOMENDAÇÕES DE FILMES PARA ASSISTIR</h1>
-    <ul>
+<body class="recommendation-page">
+    <h1 class="recommendation-title">SUAS RECOMENDAÇÕES DE FILMES PARA ASSISTIR</h1>
+    <ul class="recommendation-list">
         {% for movie in movies %}
-            <li>
+            <li class="recommendation-item">
                 <strong>{{ movie['Movie Name'] }}</strong> ({{ movie['Year of Release'] }})<br>
                 Direção: {{ movie['Director'] }}<br>
                 Gênero: {{ movie['Genre'] }}<br>
@@ -16,6 +17,6 @@
             </li>
         {% endfor %}
     </ul>
-    <a href="/">Voltar</a>
+    <a href="/" class="back-button">Voltar</a>
 </body>
 </html>
