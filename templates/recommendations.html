@@ -107,19 +107,25 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const items = document.querySelectorAll(".recommendation-item");
-
+    
             items.forEach(item => {
                 const movieId = item.getAttribute("data-movie-id");
-                
-                fetch(`https://api.themoviedb.org/3/movie/{movie_id}/images}`)
+    
+                // Adicione a sua chave da API aqui
+                const apiKey = "S8b4934049f5a18817585854901b8b767";
+    
+                // URL para obter as informações do filme, incluindo o pôster
+                fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=pt-BR`)
                     .then(response => response.json())
                     .then(data => {
                         const imgElement = item.querySelector(".poster-img");
-                        imgElement.src = data.posterUrl;
+                        // URL completa para o pôster, considerando o caminho base
+                        imgElement.src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
                     })
                     .catch(error => console.error("Erro ao carregar pôster:", error));
             });
         });
     </script>
+    
 </body>
 </html>
