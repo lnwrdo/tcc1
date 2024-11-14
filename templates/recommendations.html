@@ -4,13 +4,85 @@
     <meta charset="UTF-8">
     <title>Recomendações de Filmes</title>
     <style>
-        /* ... (estilos existentes) ... */
+        body.recommendation-page {
+            background-color: #000000;
+            color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 20px;
+        }
+        .recommendation-title {
+            color: #ff4c4c;
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+        .recommendation-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 80%;
+            max-width: 1200px;
+            margin-bottom: 60px;
+        }
+        .recommendation-item {
+            background-color: #1f1f1f;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .recommendation-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
         .poster-img {
             width: 100%;
-            height: auto;
+            max-height: 300px;
+            object-fit: cover;
             border-radius: 10px;
             margin-bottom: 15px;
-            object-fit: cover;
+        }
+        .movie-title {
+            font-size: 1.7rem;
+            color: #ff4c4c;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .movie-details {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #cccccc;
+            text-align: center;
+        }
+        .movie-description {
+            margin-top: 15px;
+            color: #aaaaaa;
+            font-style: italic;
+            text-align: center;
+        }
+        .back-button {
+            position: fixed;
+            bottom: 50px;
+            right: 30px;
+            background-color: #ff4c4c;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #e04343;
         }
     </style>
 </head>
