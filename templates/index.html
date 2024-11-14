@@ -2,25 +2,26 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Recomendações de Filmes</title>
-    <link rel="stylesheet" href="estilo.css"> <!-- Link para seu CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
+    <title>Página Inicial</title>
 </head>
 <body>
-    <div class="recommendations-container">
-        <h1>Suas Recomendações de Filmes para Assistir</h1>
-        <ul class="movie-list">
-            {% for movie in movies %}
-                <li class="movie-item">
-                    <strong>{{ movie['Movie Name'] }}</strong> ({{ movie['Year of Release'] }})<br>
-                    <span>Direção: {{ movie['Director'] }}</span><br>
-                    <span>Gênero: {{ movie['Genre'] }}</span><br>
-                    <p>Descrição: {{ movie['Description'] }}</p>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-
-    <!-- Botão voltar -->
-    <button class="back-button" onclick="history.back()">Voltar</button>
+    <header>
+        <h1>ANTES DO FRAME</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+                <li><a href="{{ url_for('escolha_filme') }}">Escolha do Filme</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                console.log('Link clicado:', link.href);
+            });
+        });
+    </script>
 </body>
 </html>
