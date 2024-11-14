@@ -80,6 +80,7 @@ nav li {
   margin: 0 15px;
 }
 
+/* Estilo de navegação para os links */
 nav a {
   color: #ec1313;
   text-decoration: none;
@@ -87,7 +88,13 @@ nav a {
   transition: color 0.3s ease;
   z-index: 3;
   position: relative;
+  text-transform: uppercase; /* Transforma o texto em maiúsculas */
+  font-family: 'Poppins', sans-serif; /* Altere para uma fonte arredondada */
 }
+
+/* Adicione @import se estiver usando uma fonte externa */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 
 nav a:hover {
   color: #ff7878;
