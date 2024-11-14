@@ -111,11 +111,9 @@
 
             items.forEach(item => {
                 const movieId = item.getAttribute("data-movie-id");
+                const apiKey = "SUA_CHAVE_DA_API";
 
-                // Adicione a sua chave da API aqui
-                const apiKey = "8b4934049f5a18817585854901b8b767";
-
-                // URL para obter as informações do filme, incluindo o pôster
+                // Obtenha os detalhes do filme, incluindo o pôster
                 fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=pt-BR`)
                     .then(response => {
                         if (!response.ok) {
@@ -124,16 +122,16 @@
                         return response.json();
                     })
                     .then(data => {
-                        console.log("Dados do filme:", data); // Debug: Verifique os dados no console
+                        console.log("Dados do filme:", data); // Verifica o objeto retornado no console
                         const imgElement = item.querySelector(".poster-img");
 
-                        // Verifique se o poster_path existe antes de definir a URL
+                        // Verifica se o poster_path existe e atualiza o src da imagem
                         if (data.poster_path) {
                             imgElement.src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
                             imgElement.alt = `Pôster de ${data.title}`;
                         } else {
                             console.warn(`Pôster não disponível para o filme ID: ${movieId}`);
-                            imgElement.src = "url_de_uma_imagem_alternativa.jpg"; // Defina uma imagem padrão aqui
+                            imgElement.src = "url_de_uma_imagem_alternativa.jpg"; // URL de uma imagem alternativa
                             imgElement.alt = "Pôster não disponível";
                         }
                     })
