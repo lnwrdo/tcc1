@@ -4,80 +4,22 @@
     <meta charset="UTF-8">
     <title>Recomendações de Filmes</title>
     <style>
-        body.recommendation-page {
-            background-color: #000000;
-            color: #f5f5f5;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding-top: 20px;
-        }
-        .recommendation-title {
-            color: #ff4c4c;
-            font-size: 3rem;
-            margin-bottom: 30px;
-        }
-        .recommendation-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            width: 80%;
-            max-width: 1200px;
-            margin-bottom: 60px;
-        }
-        .recommendation-item {
-            background-color: #1f1f1f;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .recommendation-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-        .movie-title {
-            font-size: 1.7rem;
-            color: #ff4c4c;
-            margin-bottom: 10px;
-        }
-        .movie-details {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #cccccc;
-        }
-        .movie-description {
-            margin-top: 15px;
-            color: #aaaaaa;
-            font-style: italic;
-        }
-        .back-button {
-            position: fixed;
-            bottom: 50px;
-            right: 30px;
-            background-color: #ff4c4c;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .back-button:hover {
-            background-color: #e04343;
+        /* ... (estilos existentes) ... */
+        .poster-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            object-fit: cover;
         }
     </style>
 </head>
 <body class="recommendation-page">
     <h1 class="recommendation-title">OS SEUS FILMES GERADOS FORAM ESSES</h1>
-    <ul class="recommendation-list">
+    <ul class="recommendation-list" id="recommendation-list">
         {% for movie in movies %}
-            <li class="recommendation-item">
+            <li class="recommendation-item" data-movie-id="{{ movie['ID'] }}">
+                <img class="poster-img" src="" alt="Pôster de {{ movie['Movie Name'] }}" />
                 <div class="movie-title">{{ movie['Movie Name'] }}</div>
                 <div class="movie-details">
                     <strong>Ano:</strong> {{ movie['Year of Release'] }}<br>
@@ -89,5 +31,23 @@
         {% endfor %}
     </ul>
     <a href="/" class="back-button">Voltar</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const items = document.querySelectorAll(".recommendation-item");
+
+            items.forEach(item => {
+                const movieId = item.getAttribute("data-movie-id");
+                
+                fetch(`https://api.themoviedb.org/3/movie/{movie_id}/images}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const imgElement = item.querySelector(".poster-img");
+                        imgElement.src = data.posterUrl;
+                    })
+                    .catch(error => console.error("Erro ao carregar pôster:", error));
+            });
+        });
+    </script>
 </body>
 </html>
