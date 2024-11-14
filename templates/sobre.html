@@ -3,7 +3,48 @@
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
     <meta charset="UTF-8">
-    <title>Escolha do Filme</title>
+    <title>Sobre o Projeto</title>
+    <style>
+        /* Estilos adicionais para o conteúdo da página Sobre */
+        .section-content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(19, 28, 33, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .section-content h3 {
+            color: #ff4c4c;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .team-members {
+            margin-top: 30px;
+        }
+
+        .team-members ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .team-members li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #131C21;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,6 +57,32 @@
             </ul>
         </nav>
     </header>
-    <h2 class="section-title">FILMES DESTAQUES DE 2024</h2>
+
+    <h2 class="section-title">SOBRE O PROJETO</h2>
+
+    <!-- Espaço para o texto sobre o projeto -->
+    <div class="section-content">
+        <h3>Visão Geral do Projeto</h3>
+        <p>
+            Este projeto foi desenvolvido com o objetivo de criar uma plataforma interativa para recomendações de filmes. 
+            A interface oferece aos usuários uma experiência imersiva e intuitiva, permitindo a navegação entre diferentes 
+            seções e uma escolha de filmes personalizada.
+        </p>
+        <p>
+            Utilizando tecnologias modernas de desenvolvimento web, a aplicação integra estilos visuais atraentes com uma 
+            arquitetura robusta, garantindo fluidez e desempenho.
+        </p>
+    </div>
+
+    <!-- Espaço para o texto sobre os membros da equipe -->
+    <div class="section-content team-members">
+        <h3>Membros da Equipe</h3>
+        <ul>
+            <li>João Silva - Desenvolvedor Front-End</li>
+            <li>Maria Oliveira - Designer UX/UI</li>
+            <li>Carlos Santos - Desenvolvedor Back-End</li>
+            <li>Ana Costa - Gerente de Projeto</li>
+        </ul>
+    </div>
 </body>
 </html>
