@@ -8,6 +8,9 @@ app = Flask(__name__)
 # Carregue os dados do arquivo data.csv
 df = pd.read_csv('data.csv')
 
+# Limpe as descrições removendo vírgulas desnecessárias entre palavras
+df['Description'] = df['Description'].apply(lambda x: ' '.join(x.split(', ')))
+
 # Carregue o modelo treinado
 model = load_model('modelo_recomendacao.h5')
 
@@ -37,13 +40,11 @@ def recommend():
     # Obtenha os 5 filmes com as melhores previsões
     top_movies = filtered_movies.nlargest(5, 'Predicted Rating')
 
+    # Limpe as descrições antes de criar as recomendações
+    top_movies['Description'] = top_movies['Description'].apply(lambda x: ' '.join(x.split(', ')))
+
     recommendations = top_movies[['Movie Name', 'Year of Release', 'Director', 'Genre', 'Description']].to_dict(orient='records')
     return render_template('recommendations.html', movies=recommendations)
 
 if __name__ == '__main__':
     app.run(debug=True)
-# Certifique-se de que a descrição não tenha vírgulas desnecessárias
-for movie in movies:
-    movie['Description'] = movie['Description'].replace(', ', ' ')
-
-    
