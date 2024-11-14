@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Recomendações de Filmes</title>
     <style>
-        /* Estilos para a página */
         body.recommendation-page {
             background-color: #000000;
             color: #f5f5f5;
@@ -36,38 +35,25 @@
             padding: 20px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
         .recommendation-item:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
-        .poster-img {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
         .movie-title {
             font-size: 1.7rem;
             color: #ff4c4c;
             margin-bottom: 10px;
-            text-align: center;
         }
         .movie-details {
             font-size: 1rem;
             line-height: 1.6;
             color: #cccccc;
-            text-align: center;
         }
         .movie-description {
             margin-top: 15px;
             color: #aaaaaa;
             font-style: italic;
-            text-align: center;
         }
         .back-button {
             position: fixed;
@@ -89,10 +75,9 @@
 </head>
 <body class="recommendation-page">
     <h1 class="recommendation-title">OS SEUS FILMES GERADOS FORAM ESSES</h1>
-    <ul class="recommendation-list" id="recommendation-list">
+    <ul class="recommendation-list">
         {% for movie in movies %}
-            <li class="recommendation-item" data-movie-id="{{ movie['ID'] }}">
-                <img class="poster-img" src="" alt="Pôster de {{ movie['Movie Name'] }}" />
+            <li class="recommendation-item">
                 <div class="movie-title">{{ movie['Movie Name'] }}</div>
                 <div class="movie-details">
                     <strong>Ano:</strong> {{ movie['Year of Release'] }}<br>
@@ -104,40 +89,5 @@
         {% endfor %}
     </ul>
     <a href="/" class="back-button">Voltar</a>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const items = document.querySelectorAll(".recommendation-item");
-
-            items.forEach(item => {
-                const movieId = item.getAttribute("data-movie-id");
-                const apiKey = "8b4934049f5a18817585854901b8b767";
-
-                // Obtenha os detalhes do filme, incluindo o pôster
-                fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=pt-BR`)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error("Erro na resposta da API");
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        console.log("Dados do filme:", data); // Verifica o objeto retornado no console
-                        const imgElement = item.querySelector(".poster-img");
-
-                        // Verifica se o poster_path existe e atualiza o src da imagem
-                        if (data.poster_path) {
-                            imgElement.src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
-                            imgElement.alt = `Pôster de ${data.title}`;
-                        } else {
-                            console.warn(`Pôster não disponível para o filme ID: ${movieId}`);
-                            imgElement.src = "url_de_uma_imagem_alternativa.jpg"; // URL de uma imagem alternativa
-                            imgElement.alt = "Pôster não disponível";
-                        }
-                    })
-                    .catch(error => console.error("Erro ao carregar pôster:", error));
-            });
-        });
-    </script>
 </body>
 </html>
