@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
     <meta charset="UTF-8">
     <title>Sobre o Projeto</title>
     <style>
-        /* Estilos adicionais para o conteúdo da página Sobre */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
         .section-content {
             max-width: 800px;
             margin: 20px auto;
@@ -43,6 +47,15 @@
             background-color: #000000;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .team-members a {
+            color: #ffffff;
+            margin-left: 10px;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -60,27 +73,50 @@
 
     <h2 class="section-title">SOBRE O PROJETO</h2>
 
-    <!-- Espaço para o texto sobre o projeto -->
     <div class="section-content">
         <p>
             Nosso projeto, 'Antes do Frame', representa a culminação de anos de estudos e experiências adquiridas 
             ao longo da nossa jornada acadêmica em Ciência da Computação pela universidade UNISAGRADO. 
             Como parte do Trabalho de Conclusão de Curso (TCC), decidimos desenvolver um site de recomendações de filmes.
         </p>
-    
+        <p>
             O site conta com duas páginas principais: a página inicial, 
             que acolhe o usuário com informações e apresentação do projeto, e uma segunda página onde é possível explorar as recomendações de filmes
             com base nas preferências do usuário. Batizamos o projeto de 'Antes do Frame' para simbolizar o momento que antecede a descoberta de uma história marcante, 
-            quando estamos prestes a encontrar uma nova inspiração
+            quando estamos prestes a encontrar uma nova inspiração.
         </p>
     </div>
 
     <div class="section-content team-members">
         <h3>MEMBROS DA EQUIPE</h3>
         <ul>
-            <li>Leonardo Nogueira Lemes - Desenvolvedor Front-End</li>
-            <li>Rafael Gasparatto - Desenvolvedor Back-End</li>
-            <li>Rodolfo Gustavo Filho</li>
+            <li>
+                Leonardo Nogueira Lemes - Desenvolvedor Front-End
+                <a href="https://www.linkedin.com/in/seu-perfil" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/seu-usuario" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li>
+                Rafael Gasparatto - Desenvolvedor Back-End
+                <a href="https://www.linkedin.com/in/seu-perfil" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/seu-usuario" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li>
+                Rodolfo Gustavo Filho
+                <a href="https://www.linkedin.com/in/seu-perfil" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/seu-usuario" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
         </ul>
     </div>
 </body>
