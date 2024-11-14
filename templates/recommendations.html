@@ -30,6 +30,7 @@
             margin-bottom: 60px;
         }
         .recommendation-item {
+            display: flex;
             background-color: #1f1f1f;
             border-radius: 15px;
             padding: 20px;
@@ -39,6 +40,12 @@
         .recommendation-item:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        .movie-poster {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 10px;
         }
         .movie-title {
             font-size: 1.7rem;
@@ -78,13 +85,20 @@
     <ul class="recommendation-list">
         {% for movie in movies %}
             <li class="recommendation-item">
-                <div class="movie-title">{{ movie['Movie Name'] }}</div>
-                <div class="movie-details">
-                    <strong>Ano:</strong> {{ movie['Year of Release'] }}<br>
-                    <strong>Direção:</strong> {{ movie['Director'] }}<br>
-                    <strong>Gênero:</strong> {{ movie['Genre'] }}<br>
+                {% if movie['Poster'] %}
+                    <img src="{{ movie['Poster'] }}" alt="Pôster de {{ movie['Movie Name'] }}" class="movie-poster">
+                {% else %}
+                    <img src="/path/to/default_image.jpg" alt="Pôster indisponível" class="movie-poster">
+                {% endif %}
+                <div>
+                    <div class="movie-title">{{ movie['Movie Name'] }}</div>
+                    <div class="movie-details">
+                        <strong>Ano:</strong> {{ movie['Year of Release'] }}<br>
+                        <strong>Direção:</strong> {{ movie['Director'] }}<br>
+                        <strong>Gênero:</strong> {{ movie['Genre'] }}<br>
+                    </div>
+                    <div class="movie-description">{{ movie['Description'] }}</div>
                 </div>
-                <div class="movie-description">{{ movie['Description'] }}</div>
             </li>
         {% endfor %}
     </ul>

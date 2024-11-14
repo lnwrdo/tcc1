@@ -2,6 +2,7 @@ import pandas as pd
 from flask import Flask, render_template, request
 from tensorflow.keras.models import load_model
 import numpy as np
+import requests  # Import necessário para fazer chamadas HTTP
 
 app = Flask(__name__)
 
@@ -13,6 +14,19 @@ df['Description'] = df['Description'].apply(lambda x: ' '.join(x.split(', ')))
 
 # Carregue o modelo treinado
 model = load_model('modelo_recomendacao.h5')
+
+# Chave de API do OMDb - Substitua por sua chave
+OMDB_API_KEY = "60ac2f57"
+
+def fetch_movie_poster(title):
+    """Busca o pôster de um filme no OMDb."""
+    url = f"https://www.omdbapi.com/apikey.aspx?VERIFYKEY=d55e83b3-4f6b-4633-8e0a-b99035aab968"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        if data['Response'] == 'True':
+            return data.get('Poster', None)  # Retorna a URL do pôster se disponível
+    return None
 
 @app.route('/')
 def index():
@@ -48,7 +62,19 @@ def recommend():
     # Limpe as descrições antes de criar as recomendações
     top_movies['Description'] = top_movies['Description'].apply(lambda x: ' '.join(x.split(', ')))
 
-    recommendations = top_movies[['Movie Name', 'Year of Release', 'Director', 'Genre', 'Description']].to_dict(orient='records')
+    # Prepare as recomendações, incluindo o pôster
+    recommendations = []
+    for _, row in top_movies.iterrows():
+        movie_info = {
+            'Movie Name': row['Movie Name'],
+            'Year of Release': row['Year of Release'],
+            'Director': row['Director'],
+            'Genre': row['Genre'],
+            'Description': row['Description'],
+            'Poster': fetch_movie_poster(row['Movie Name'])  # Chama a função para obter o pôster
+        }
+        recommendations.append(movie_info)
+
     return render_template('recommendations.html', movies=recommendations)
 
 if __name__ == '__main__':
