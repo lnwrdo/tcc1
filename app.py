@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from tensorflow.keras.models import load_model
 import numpy as np
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Carregue os dados do arquivo data.csv
 df = pd.read_csv('data.csv')
@@ -23,6 +23,11 @@ def index():
 def escolha_filme():
     genres = df['Genre'].unique()  # Obtenha os gêneros únicos
     return render_template('escolha.html', genres=genres)
+
+@app.route('/sobre')
+def sobre_o_projeto():
+    genres = df['Genre'].unique()  # Obtenha os gêneros únicos
+    return render_template('sobre.html', genres=genres)
 
 @app.route('/recommend', methods=['POST'])
 def recommend():
@@ -46,5 +51,5 @@ def recommend():
     recommendations = top_movies[['Movie Name', 'Year of Release', 'Director', 'Genre', 'Description']].to_dict(orient='records')
     return render_template('recommendations.html', movies=recommendations)
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
