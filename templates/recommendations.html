@@ -16,11 +16,13 @@
             align-items: center;
             min-height: 100vh;
             padding-top: 20px;
+            overflow-x: hidden;
         }
         .recommendation-title {
             color: #ff4c4c;
             font-size: 3rem;
             margin-bottom: 30px;
+            text-shadow: 2px 2px 8px rgba(255, 76, 76, 0.6);
         }
         .recommendation-list {
             display: grid;
@@ -29,15 +31,17 @@
             width: 80%;
             max-width: 1200px;
             margin-bottom: 60px;
-            list-style-type: none; /* Remove os marcadores de lista */
-            padding: 0; /* Remove o padding padrão da lista */
+            list-style-type: none;
+            padding: 0;
         }
         .recommendation-item {
-            background-color: #1f1f1f;
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
         }
         .recommendation-item:hover {
             transform: scale(1.05);
@@ -49,6 +53,7 @@
             margin-bottom: 10px;
             font-family: 'Arial', sans-serif;
             text-transform: uppercase;
+            font-weight: bold;
         }
         .movie-details, .movie-description {
             font-family: 'Poppins', sans-serif;
@@ -72,9 +77,22 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
         .back-button:hover {
             background-color: #e04343;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
