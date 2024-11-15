@@ -46,6 +46,7 @@
             color: #ff4c4c;
             margin-bottom: 10px;
             font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
         }
         .movie-details, .movie-description {
             font-family: 'Poppins', sans-serif;
@@ -80,13 +81,13 @@
     <ul class="recommendation-list">
         {% for movie in movies %}
             <li class="recommendation-item">
-                <div class="movie-title">{{ movie['Movie Name'] }}</div>
+                <div class="movie-title">{{ movie['Movie Name'] | upper }}</div>
                 <div class="movie-details">
                     <strong>Ano:</strong> {{ movie['Year of Release'] }}<br>
                     <strong>Direção:</strong> {{ movie['Director'] }}<br>
                     <strong>Gênero:</strong> {{ movie['Genre'] }}<br>
                 </div>
-                <div class="movie-description">{{ movie['Description'] }}</div>
+                <div class="movie-description">"{{ movie['Description'] }}"</div>
             </li>
         {% endfor %}
     </ul>
