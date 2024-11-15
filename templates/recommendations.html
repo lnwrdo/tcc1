@@ -34,8 +34,8 @@
             list-style-type: none;
             padding: 0;
         }
-        .recommendation-item {
-            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+        .recommendation-item, .platforms-item {
+            background: rgba(26, 26, 26, 0.8);
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
@@ -43,7 +43,7 @@
             opacity: 0;
             animation: fadeInUp 0.5s ease forwards;
         }
-        .recommendation-item:hover {
+        .recommendation-item:hover, .platforms-item:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
@@ -64,6 +64,24 @@
         .movie-description {
             margin-top: 15px;
             color: #FFFFFF;
+        }
+        .platforms-title {
+            font-size: 1.7rem;
+            color: #ff4c4c;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .platforms-icons {
+            display: flex;
+            gap: 15px;
+        }
+        .platforms-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+        .platforms-icons img:hover {
+            transform: scale(1.1);
         }
         .back-button {
             position: fixed;
@@ -110,6 +128,18 @@
                 <div class="movie-description">"{{ movie['Description'] }}"</div>
             </li>
         {% endfor %}
+        
+        <!-- Nova Caixa de Plataformas -->
+        <li class="platforms-item">
+            <div class="platforms-title">Plataformas</div>
+            <div class="platforms-icons">
+                <img src="icone_netflix.png" alt="Netflix" title="Netflix">
+                <img src="icone_prime.png" alt="Amazon Prime" title="Amazon Prime">
+                <img src="icone_disney.png" alt="Disney+" title="Disney+">
+                <img src="icone_hbo.png" alt="HBO Max" title="HBO Max">
+                <!-- Adicione mais ícones conforme necessário -->
+            </div>
+        </li>
     </ul>
     <a href="/escolha" class="back-button">VOLTAR</a>
 </body>
