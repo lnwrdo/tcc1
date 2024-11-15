@@ -34,7 +34,7 @@
             list-style-type: none;
             padding: 0;
         }
-        .recommendation-item {
+        .recommendation-item, .extra-message {
             background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
             border-radius: 15px;
             padding: 20px;
@@ -42,6 +42,12 @@
             transition: transform 0.3s, box-shadow 0.3s;
             opacity: 0;
             animation: fadeInUp 0.5s ease forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff4c4c;
+            font-size: 1.3rem;
+            text-align: center;
         }
         .recommendation-item:hover {
             transform: scale(1.05);
@@ -103,13 +109,15 @@
             <li class="recommendation-item">
                 <div class="movie-title">{{ movie['Movie Name'] | upper }}</div>
                 <div class="movie-details">
-                    <strong>ANO:</strong> {{ movie['Year of Release'] }}<br>
-                    <strong>DIREÇÃO:</strong> {{ movie['Director'] }}<br>
-                    <strong>GÊNERO:</strong> {{ movie['Genre'] }}<br>
+                    <strong>Ano:</strong> {{ movie['Year of Release'] }}<br>
+                    <strong>Direção:</strong> {{ movie['Director'] }}<br>
+                    <strong>Gênero:</strong> {{ movie['Genre'] }}<br>
                 </div>
                 <div class="movie-description">"{{ movie['Description'] }}"</div>
             </li>
         {% endfor %}
+        <!-- Cartão adicional de sugestão -->
+        <li class="extra-message">Explore mais filmes e descubra novas histórias!</li>
     </ul>
     <a href="/" class="back-button">VOLTAR</a>
 </body>
