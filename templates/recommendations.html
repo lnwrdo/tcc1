@@ -34,7 +34,7 @@
             list-style-type: none;
             padding: 0;
         }
-        .recommendation-item, .extra-message {
+        .recommendation-item {
             background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
             border-radius: 15px;
             padding: 20px;
@@ -42,12 +42,6 @@
             transition: transform 0.3s, box-shadow 0.3s;
             opacity: 0;
             animation: fadeInUp 0.5s ease forwards;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ff4c4c;
-            font-size: 1.3rem;
-            text-align: center;
         }
         .recommendation-item:hover {
             transform: scale(1.05);
@@ -116,8 +110,6 @@
                 <div class="movie-description">"{{ movie['Description'] }}"</div>
             </li>
         {% endfor %}
-        <!-- Cartão adicional de sugestão -->
-        <li class="extra-message">Explore mais filmes e descubra novas histórias!</li>
     </ul>
     <a href="/" class="back-button">VOLTAR</a>
 </body>
