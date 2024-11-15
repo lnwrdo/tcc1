@@ -1,96 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
     <meta charset="UTF-8">
-    <title>Recomendações de Filmes</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body.recommendation-page {
-            background-color: #000000;
-            color: #f5f5f5;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding-top: 20px;
-        }
-        .recommendation-title {
-            color: #ff4c4c;
-            font-size: 3rem;
-            margin-bottom: 30px;
-        }
-        .recommendation-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            width: 80%;
-            max-width: 1200px;
-            margin-bottom: 60px;
-        }
-        .recommendation-item {
-            background-color: #1f1f1f;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .recommendation-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-        .movie-title {
-            font-size: 1.7rem;
-            color: #ff4c4c;
-            margin-bottom: 10px;
-            font-family: 'Arial', sans-serif;
-        }
-        .movie-details, .movie-description {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #cccccc;
-        }
-        .movie-description {
-            margin-top: 15px;
-            color: #aaaaaa;
-            font-style: italic;
-        }
-        .back-button {
-            position: fixed;
-            bottom: 50px;
-            right: 30px;
-            background-color: #ff4c4c;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .back-button:hover {
-            background-color: #e04343;
-        }
-    </style>
+    <title>Escolha do Filme</title>
 </head>
-<body class="recommendation-page">
-    <h1 class="recommendation-title">OS SEUS FILMES GERADOS FORAM ESSES</h1>
-    <ul class="recommendation-list">
-        {% for movie in movies %}
-            <li class="recommendation-item">
-                <div class="movie-title">{{ movie['Movie Name'] }}</div>
-                <div class="movie-details">
-                    <strong>Ano:</strong> {{ movie['Year of Release'] }}<br>
-                    <strong>Direção:</strong> {{ movie['Director'] }}<br>
-                    <strong>Gênero:</strong> {{ movie['Genre'] }}<br>
-                </div>
-                <div class="movie-description">{{ movie['Description'] }}</div>
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="/" class="back-button">Voltar</a>
+<body>
+    <header>
+        <h1>ANTES DO FRAME</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+                <li><a href="{{ url_for('escolha_filme') }}">Escolha do Filme</a></li>
+                <li><a href="{{ url_for('sobre_o_projeto') }}">Sobre o Projeto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="recommendation">
+        <h2>RECOMENDADOR DE FILMES:</h2>
+        <form action="{{ url_for('recommend') }}" method="post">
+            <label for="genre" style="font-family: 'Poppins', sans-serif;">SELECIONE O GÊNERO:</label>
+            <select name="genre" id="genre">
+                {% for genre in genres %}
+                    <option value="{{ genre }}">{{ genre }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="GERAR FILMES">
+        </form>
+    </section>
+
+    <h2 class="section-title">FILMES DESTAQUES DE 2024</h2>
+<!-- Lugar para colocar as imagens dos posteres, colocar os seus links -->
+    <div class="section-posters">
+        <img src="https://br.web.img3.acsta.net/r_1920_1080/pictures/23/09/02/01/06/5918458.jpg" alt="Poster de Duna 2">
+        <img src="https://a.ltrbxd.com/resized/alternative-poster/9/0/1/6/7/1/p/26bNTzmrUG5h4f2cgOGg0qQxUo5-0-1000-0-1500-crop.jpg?v=9ad48404d8_" alt="Poster de Ainda Estou aqui">
+        <img src="https://a.ltrbxd.com/resized/film-poster/8/3/8/1/4/0/838140-the-substance-0-1000-0-1500-crop.jpg?v=ab9e1072f8" alt="Poster de The substance">
+        <img src="https://a.ltrbxd.com/resized/film-poster/9/5/9/5/4/0/959540-anora-0-1000-0-1500-crop.jpg?v=9c632c1bbe" alt="Poster de Amora">
+        <img src="https://a.ltrbxd.com/resized/film-poster/8/4/2/3/0/1/842301-challengers-0-1000-0-1500-crop.jpg?v=a7cd63cbef" alt="Poster de Challengers">  
+    </div>
+
 </body>
 </html>
