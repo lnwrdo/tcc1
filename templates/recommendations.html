@@ -68,21 +68,22 @@
         .platforms-title {
             font-size: 1.3rem;
             color: #ff4c4c;
-            margin-bottom:15px;
+            margin-bottom: 15px; /* Espaço entre o título e os ícones */
             font-weight: bold;
         }
+
         .platforms-icons {
             display: flex;
-            gap: 25px;
+            flex-wrap: wrap; /* Permite que os ícones quebrem para a próxima linha */
+            gap: 25px; /* Espaçamento entre os ícones */
+            justify-content: center; /* Centraliza os ícones */
         }
         .platforms-icons img {
             width: 40px;
             height: 40px;
             transition: transform 0.3s;
         }
-        .platforms-icons img:hover {
-            transform: scale(1.1);
-        }
+
         .back-button {
             position: fixed;
             bottom: 50px;
